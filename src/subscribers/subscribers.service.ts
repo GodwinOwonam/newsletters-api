@@ -15,6 +15,17 @@ export class SubscribersService {
   async create(
     subscriptionCredentials: SubscriptionCredentialsDto,
   ): Promise<Subscriber | IResponse> {
+    const { email } = subscriptionCredentials;
+
+    const subscriberExists = await this.subscriberModel.findOne({ email });
+
+    if (subscriberExists) {
+      return {
+        status: false,
+        message: `${email} is already a subscriber!`,
+      };
+    }
+
     const subscriber = await this.subscriberModel.create(
       subscriptionCredentials,
     );
