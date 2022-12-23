@@ -5,6 +5,7 @@ import { join } from 'path';
 
 import { TodoitemsModule } from './todoitems/todoitems.module';
 import { SubscribersModule } from './subscribers/subscribers.module';
+import { ScrapesModule } from './scrapes/scrapes.module';
 
 const databaseUrl =
   process.env.DATABASE_URL || 'mongodb://localhost:27017/test';
@@ -17,6 +18,7 @@ const databaseUrl =
     }),
     TodoitemsModule,
     SubscribersModule,
+    ScrapesModule,
   ],
   controllers: [],
   providers: [],
