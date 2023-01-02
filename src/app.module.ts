@@ -8,7 +8,7 @@ import { SubscribersModule } from './subscribers/subscribers.module';
 import { ScrapesModule } from './scrapes/scrapes.module';
 
 const databaseUrl =
-  process.env.DATABASE_URL || 'mongodb://localhost:27017/test';
+  process.env.DATABASE_URL || 'mongodb://localhost:27017/newsletters-api';
 
 @Module({
   imports: [
@@ -18,7 +18,7 @@ const databaseUrl =
     }),
     TodoitemsModule,
     SubscribersModule,
-    ScrapesModule,
+    // ScrapesModule,
   ],
   controllers: [],
   providers: [],

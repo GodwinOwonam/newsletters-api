@@ -1,12 +1,4 @@
-import {
-  Body,
-  Controller,
-  Delete,
-  Get,
-  Param,
-  Patch,
-  Post,
-} from '@nestjs/common';
+import { Body, Controller, Delete, Get, Post } from '@nestjs/common';
 import { SubscriptionCredentialsDto } from './dto/subscription-credentials.dto';
 import { IResponse } from './interfaces/response.interface';
 import { Subscriber } from './schemas/subscribers.schema';
