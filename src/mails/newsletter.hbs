@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter</title>
+</head>
+<body>
+  <h5>Hi {{email}},</h5>
+  <div>
+    <h6>Your weekly digest of {{title}}</h6>
+    {{#each contents}}
+      {{#if this.image.length}}
+        <img src="{{this.image}}" alt="content image">
+      {{/if}}
+
+      {{#if this.heading.length}}
+        <h6>{{ this.heading}}</h6>
+      {{/if}}
+
+      {{#if this.text.length}}
+        <p>{{ this.text}}</p>
+      {{/if}}
+
+      {{#if this.link.length}}
+        <a href="{{this.link}}"> Read more!</a>
+      {{/if }}
+    {{/each}}
+  </div>
+  <p>Welcome</p>
+</body>
+</html>

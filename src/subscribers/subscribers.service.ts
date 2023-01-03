@@ -40,13 +40,8 @@ export class SubscribersService {
     };
   }
 
-  async findAll(): Promise<Subscriber[] | IResponse> {
-    const subscribers = await this.subscriberModel.find().exec();
-
-    return {
-      status: true,
-      data: subscribers,
-    };
+  async findAll(): Promise<SubscriberDocument[]> {
+    return await this.subscriberModel.find().exec();
   }
 
   async unsubscribe(

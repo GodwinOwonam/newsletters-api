@@ -12,5 +12,6 @@ import { SubscribersService } from './subscribers.service';
   ],
   controllers: [SubscribersController],
   providers: [SubscribersService],
+  exports: [SubscribersService],
 })
 export class SubscribersModule {}

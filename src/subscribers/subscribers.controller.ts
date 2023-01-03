@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Get, Post } from '@nestjs/common';
 import { SubscriptionCredentialsDto } from './dto/subscription-credentials.dto';
 import { IResponse } from './interfaces/response.interface';
-import { Subscriber } from './schemas/subscribers.schema';
+import { Subscriber, SubscriberDocument } from './schemas/subscribers.schema';
 import { SubscribersService } from './subscribers.service';
 
 @Controller('subscribers')
@@ -16,8 +16,12 @@ export class SubscribersController {
   }
 
   @Get()
-  async findAll(): Promise<Subscriber[] | IResponse> {
-    return await this.subscribersService.findAll();
+  async findAll(): Promise<SubscriberDocument[] | IResponse> {
+    const subscribers = await this.subscribersService.findAll();
+    return {
+      status: true,
+      data: subscribers,
+    };
   }
 
   @Delete('/')
